@@ -115,11 +115,11 @@ fn main() {
 
     let mut hm = read_file(backup_file, offset, len).unwrap();
 
+    // set bootdelay to a non-zero value
+    hm.insert("bootdelay".to_string(), 5.to_string());
     // if you wish to further modify the environment, here's where you'd do so
 
-    hm.insert("bootdelay".to_string(), 5.to_string());
     println!("new environment:");
-
     println!("{:#?}", hm);
 
     // copy content of old file
